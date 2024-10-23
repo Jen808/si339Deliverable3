@@ -1,9 +1,11 @@
 /* =====================================================
-Import Font
+Import
 ===================================================== */
 
 
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css');
+
 
 /* =====================================================
 Default color set
@@ -15,6 +17,13 @@ Default color set
     --color-background: #DCF5FA;
     --color-background-deep: #F0FCFE;
     --color-hover: #04A0BC;
+    --color-green: #25A18E;
+    --color-lightgreen: #7AE582;
+    --color-blue: #00A5CF;
+
+
+    --color-darkmode-grey: #2D2D2D;
+    --color-darkmode-deepblue: #37393d;
 
 }
 
@@ -43,12 +52,21 @@ body {
     height: auto;
 }
 
+@media (prefers-color-scheme: dark) {
+    
+    body {
+        color: #FFF;
+        background-color: var(--color-darkmode-grey);
+    }
+}
+
+
+
 /* =====================================================
 Link
 ===================================================== */
 a {
     color: var(--color-medium);
-    text-decoration: none;
     text-wrap: wrap;
     text-decoration: underline;
 }
@@ -75,6 +93,27 @@ a[href="#main"]:focus {
     left: 0;
     position: fixed;
 }
+
+@media (prefers-color-scheme: dark) {
+    a {
+        color: var(--color-medium);
+    }
+    
+    a:hover,
+    a:focus {
+        text-decoration: underline;
+        color: var(--color-hover);
+    }
+    
+    /* Skip link for accessibility */
+    a[href="#main"] {
+
+        background: #000;
+        color: #fff;
+
+    }
+}
+
 
 /* =====================================================
 Navigation
@@ -116,14 +155,74 @@ nav ul li a:hover {
 
     nav ul {
         display: flex;
-        flex-direction: column;
-        height: 8em;
+        flex-direction: row;
+        height: 3.5em;
+
     }
 
     nav ul li {
         padding: 0.4em 0;
     }
+
+    nav ul li a {
+        font-size: 0.8rem;
+    } 
+
 }
+
+@media (prefers-color-scheme: dark){
+
+    nav ul li a {
+        font-size: 0.8rem;
+        color: var(--color-lightgreen);
+    }
+
+    nav ul li a:hover {
+        color: var(--color-hover);
+    }
+    
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+    nav ul {
+        background-color: var(--color-darkmode-grey);
+ 
+    }
+    
+    nav ul li a {
+        color: var(--color-background);
+        font-weight: bold;
+        font-size: 1rem;
+    }
+    
+    nav ul li a:hover {
+        color: var(--color-hover);
+    }
+
+    
+}
+
+/* High-contrast Mode */
+@media (prefers-contrast: more) {
+    body {
+        background-color: #000;
+        color: #fff;
+    }
+
+    a {
+        color: #FFD700;
+    }
+
+    nav ul {
+        background-color: #000;
+    }
+}
+
+
+
+
+
 
 
 
@@ -146,6 +245,7 @@ header {
     align-items: center;
     justify-content: space-around;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: bounceInDown 1s ease-in-out;
 
 }
 
@@ -161,6 +261,7 @@ header img {
     height: auto;
     border-radius: 2em;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
 }
 
 
@@ -168,7 +269,7 @@ header img {
 
     header {
         flex-direction: column;
-        top: 8em;
+        top: 3.5em;
         padding: 1em 0;
     }
 
@@ -186,6 +287,17 @@ header img {
 
 }
 
+@media (prefers-color-scheme: dark) {
+    header {
+        background-color: #4a4a4a;
+    }
+    
+    header h1 {
+        color: #FFF;
+    }
+
+}
+
 
 
 /* =====================================================
@@ -199,12 +311,17 @@ main {
 main h2 {
     font-size: 1.2rem;
     font-weight: 600;
-    margin-bottom: 10px;
+    margin: 1.4em 0em;
+
 }
 
 section {
     margin-bottom: 30px;
 }
+
+
+
+
 
 /* =====================================================
 Tables 
@@ -218,7 +335,7 @@ table {
 
 thead th {
     background-color: var(--color-dark);
-    color: white;
+    color: #FFF;
     padding: 1em;
     text-align: left;
     font-size: 1.1rem;
@@ -242,20 +359,6 @@ tbody td {
 
 }
 
-@media (min-width: 768px) {
-    .table-container {
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-    }
-
-    table {
-        width: 100%;
-    }
-
-    tbody td {
-        white-space: nowrap;
-    }
-}
 
 @media (max-width: 768px) {
 
@@ -291,6 +394,9 @@ tbody td {
         position: relative;
         border: 0;
         border-bottom: 1px solid #ddd;
+        text-align: left;
+        justify-content: flex-start;
+
     }
 
     tbody td::before {
@@ -302,10 +408,42 @@ tbody td {
     tbody td:last-child {
         border-bottom: none;
     }
+
+    thead{
+        margin-bottom: 1em;
+    }
+
+    main h2{
+        margin-bottom: 1em;
+        text-align: center;
+    }
+
+    thead th{
+        padding-left: 1.8em;
+    }
 }
 
 
+@media (prefers-color-scheme: dark) {
 
+    
+    thead th {
+        background-color: var(--color-medium);
+        color: #FFF;
+    }
+    
+    tbody tr {
+        background-color: var(--color-grey);
+    }
+    
+    tbody tr:nth-child(even) {
+        background-color: var(--color-dark);
+    }
+    
+    tbody td {
+        border: 1px solid #4a4a4a;
+    }
+}
 
 
 
@@ -345,50 +483,6 @@ footer a:hover {
 
 
 
-
-
-
-
-
-/* 
-.athlete {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.athlete img {
-
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-
-
-.collapsible {
-    cursor: pointer;
-    padding: 10px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 1rem;
-}
-
-.content {
-    padding: 0 18px;
-    display: none;
-    overflow: hidden;
-    background-color: #f9f9f9;
-}
-
-.collapsible.active+.content {
-    display: block;
-}
- */
-
-
-
 /* =====================================================
 FAB Icon
 ===================================================== */
@@ -402,7 +496,7 @@ body::before {
     right: 20px;
     width: 60px;
     height: 60px;
-    background-color: #0055ff;
+    background-color: var(--color-green);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -422,7 +516,7 @@ body::after {
     right: 20px;
     width: 60px;
     height: 60px;
-    background-color: #ffcc00;
+    background-color: var(--color-blue);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -458,164 +552,3 @@ body::after:hover {
 }
 
 
-
-/* @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-.main-section {
-    animation: fadeIn 1s ease-in-out;
-}
-
-.progress-bar {
-    width: 100%;
-    background-color: #f3f3f3;
-    margin: 10px 0;
-}
-
-.progress-bar-fill {
-    width: 50%;
-    height: 20px;
-    background-color: #007BFF;
-    animation: fillAnimation 2s ease-in-out;
-}
-
-@keyframes fillAnimation {
-    from {
-        width: 0;
-    }
-
-    to {
-        width: 50%;
-    }
-} */
-
-
-
-/* .athlete:hover {
-    transform: scale(1.05);
-    transition: transform 0.3s ease;
-} */
-
-/* Dark Mode */
-@media (prefers-color-scheme: dark) {
-    body {
-        background-color: #121212;
-        color: #e0e0e0;
-    }
-
-    nav ul {
-        background-color: #444;
-    }
-
-    nav ul li a {
-        color: #e0e0e0;
-    }
-
-    header h1,
-    main h2 {
-        color: #e0e0e0;
-    }
-
-    table,
-    thead th,
-    tbody td {
-        color: #e0e0e0;
-        background-color: #1f1f1f;
-    }
-}
-
-/* High-contrast Mode */
-@media (prefers-contrast: more) {
-    body {
-        background-color: #000;
-        color: #fff;
-    }
-
-    a {
-        color: #FFD700;
-    }
-
-    nav ul {
-        background-color: #000;
-    }
-}
-
-/* Typography */
-h1,
-h2 {
-    font-size: clamp(1.5rem, 2vw, 2.5rem);
-}
-
-
-
-
-
-
-@media (min-width: 768px) {
-    table {
-        display: block;
-        width: 100%;
-        border: none;
-        margin-bottom: 20px;
-        table-layout: auto;
-    }
-
-    thead {
-        display: none;
-        /* Hide the table headers */
-    }
-
-    tbody,
-    tr {
-        display: block;
-        /* Each row becomes a block for card style */
-        margin-bottom: 20px;
-        background-color: white;
-        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-        /* Card shadow */
-        border-radius: 10px;
-        padding: 15px;
-        border: 1px solid #ddd;
-    }
-
-    td {
-        display: block;
-        /* Each cell acts as a block */
-        width: 100%;
-        padding: 10px;
-        text-align: left;
-        position: relative;
-        padding-left: 50%;
-        /* Pushes text to the right */
-        font-size: 1rem;
-        border-bottom: 1px solid #ddd;
-        /* Optional: separating line between fields */
-    }
-
-    td:last-child {
-        border-bottom: none;
-    }
-
-    td::before {
-        content: attr(data-th);
-        /* Use the data-th attribute to show the 'th' values */
-        position: absolute;
-        left: 10px;
-        top: 10px;
-        width: calc(50% - 20px);
-        font-weight: bold;
-        color: var(--color-dark);
-    }
-
-    /* Ensure alternate row coloring still works in card style */
-    tbody tr:nth-child(even) {
-        background-color: var(--color-background-deep);
-    }
-}
