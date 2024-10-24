@@ -1,0 +1,193 @@
+/* =====================================================
+Import
+===================================================== */
+
+
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css');
+
+
+/* =====================================================
+Default color set
+===================================================== */
+
+:root {
+
+    --color-colombia-blue: #9BDDFF;
+
+
+    --color-dark: #213A57;
+    --color-medium: #0B6477;
+    --color-background: #DCF5FA;
+    --color-background-deep: #F0FCFE;
+    --color-hover: #04A0BC;
+    --color-green: #25A18E;
+    --color-lightgreen: #7AE582;
+    --color-blue: #00A5CF;
+
+
+    --color-darkmode-grey: #2D2D2D;
+    --color-darkmode-deepblue: #37393d;
+    --color-darkmode-dark-grey: #1a1a1a;
+    --color-darkmode-mid-grey: #242424;
+    --color-darkmode-header: #4a4a4a;
+    --color-darkmode-light-grey: #666666;
+    --color-darkmode-green: #43bfac;
+    --color-darkmode-blue: #22beda;
+
+}
+
+
+/* =====================================================
+Screen setting - Default: Light Mode
+===================================================== */
+
+
+
+
+
+
+/* =====================================================
+Footer 
+===================================================== */
+
+footer {
+    background-color: var(--color-colombia-blue);
+    color: var(--color-dark);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 1rem;
+}
+
+footer p {
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding-bottom: 0.8em;
+}
+
+footer a {
+    color: var(--color-medium);
+    font-weight: 500;
+}
+
+footer address {
+    line-height: 1.4em !important;
+
+}
+
+footer a:hover {
+    color: var(--color-hover);
+}
+
+
+
+@media (prefers-color-scheme: dark) {
+
+    footer {
+        background-color: var(--color-darkmode-dark-grey);
+        color: var(--color-colombia-blue);
+
+    }
+
+
+    footer a {
+        color: #FFF;
+    }
+
+
+    footer a:hover {
+        color: var(--color-hover);
+    }
+
+
+
+}
+
+
+
+@media (prefers-contrast: more) {
+    footer {
+        background-color: #000;
+        color: #FFF;
+    }
+
+
+    footer a {
+        color: #FFF
+    }
+
+
+    footer a:hover {
+        color: blue;
+    }
+
+}
+
+
+
+
+
+/* =====================================================
+FAB Icon
+===================================================== */
+
+
+body::before {
+    content: "\f002";
+    font-family: 'FontAwesome';
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: var(--color-green);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    cursor: pointer;
+}
+
+body::after {
+    content: "\f0b0";
+    font-family: 'FontAwesome';
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: var(--color-blue);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    cursor: pointer;
+}
+
+
+
+
+
+@media (prefers-contrast: more) {
+    body::before {
+        background-color: #000;
+        color: white;
+        border: 1px solid #FFF;
+    }
+
+    body::after {
+        background-color: #000;
+        color: white;
+        border: 1px solid #FFF;
+    }
+
+
+}
