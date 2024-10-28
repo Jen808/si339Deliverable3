@@ -14,8 +14,6 @@ Default color set
 :root {
 
     --color-colombia-blue: #9BDDFF;
-
-
     --color-dark: #213A57;
     --color-medium: #0B6477;
     --color-background: #DCF5FA;
@@ -42,10 +40,280 @@ Default color set
 Screen setting - Default: Light Mode
 ===================================================== */
 
+html {
+    font-size: 16px;
+    line-height: 1.5;
+    scroll-behavior: smooth;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: auto;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    background-color: var(--color-background);
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: auto;
+
+}
+
+
+/* =====================================================
+Navigation
+===================================================== */
+
+
+nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    background-color: var(--color-colombia-blue);
+
+
+}
+
+nav ul li {
+    width: 100%;
+    padding: 0.4em 0;
+    border-bottom: 1px solid var(--color-dark);
+    text-align: center;
 
 
 
 
+
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: 500;
+    color: var(--color-dark);
+}
+
+
+/* =====================================================
+Header
+===================================================== */
+
+header {
+    text-align: center;
+    padding: 1em;
+    margin-top: 2em;
+}
+
+header h1 {
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+header a {
+    color: var(--color-dark);
+}
+
+header h2 {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: var(--color-blue);
+}
+
+
+/* =====================================================
+Main content
+===================================================== */
+
+main {
+    padding: 1em;
+}
+
+h2 {
+    font-size: 1.4em;
+    margin-top: 2em;
+    font-weight: 600;
+    text-align: center;
+}
+
+a[href="#main"] {
+    display: none;
+}
+
+.summary p {
+    font-size: 1em;
+    font-weight: 400;
+    line-height: 1.4em;
+    background-color: #FFF;
+    padding: 1.6em;
+}
+
+.athlete {
+    font-weight: 600;
+}
+
+.summary time {
+    font-weight: 600;
+    color: var(--color-blue);
+
+}
+
+
+
+/* =====================================================
+Team Results
+===================================================== */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1em 0;
+    font-size: 0.9em;
+    background-color: #FFF;
+
+}
+
+table tr:nth-child(even) {
+    background-color: var(--color-background-deep);
+}
+
+table td:nth-child(2) {
+    color: var(--color-dark);
+    font-weight: 500;
+}
+
+
+
+th,
+td {
+    padding: 0.5em;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+th {
+    background-color: var(--color-dark);
+    color: #FFF;
+}
+
+#athlete-sr-table,
+#athlete-result-table {
+    overflow-x: auto;
+}
+
+table td a {
+    font-size: 0.9em;
+    color: var(--color-colombia-blue);
+    text-decoration: none;
+}
+
+
+/* =====================================================
+Individual results
+===================================================== */
+
+#individual-results .athlete {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1em 0;
+    text-align: center;
+    border: 1px solid #ddd;
+    padding: 0.8em;
+    border-radius: 1em;
+    background-color: #FFF;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding-bottom: 0;
+}
+
+#individual-results .athlete figure {
+    margin: 0;
+}
+
+#individual-results .athlete img {
+    width: 10em;
+    height: auto;
+    border-radius: 1em;
+    margin-bottom: 5px;
+}
+
+#individual-results .athlete figcaption {
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-top: 5px;
+}
+
+.athlete dl {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8em;
+    width: 100%;
+    margin-top: 1em;
+    text-align: left;
+    padding: 0.8em;
+    background-color: var(--color-colombia-blue);
+    color: #000;
+    border-radius: 0em 0em 1em 1em;
+
+}
+
+.athlete dt {
+    font-weight: 500;
+    color: #555;
+}
+
+.athlete dd {
+    margin: 0;
+    text-align: right;
+    color: #333;
+}
+
+
+/* =====================================================
+gallery
+===================================================== */
+#gallery {
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+
+/* Center and Style the Header */
+#gallery h2 {
+    font-size: 1.5em;
+    text-align: center;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+#gallery {
+    display: block;
+    justify-items: center;
+}
+
+#gallery img {
+    display: inline-block;
+    width: 100%;
+    max-width: 100px;
+    height: auto;
+    border-radius: 0.3em;
+    margin: 0.2em;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease-in-out;
+}
+
+#gallery-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 8px;
+    justify-items: center;
+    align-items: center;
+
+}
 
 /* =====================================================
 Footer 
@@ -79,6 +347,10 @@ footer a:hover {
     color: var(--color-hover);
 }
 
+footer a[aria-label="Instagram"] {
+    margin-left: 0.5em;
+    font-size: 1.2em;
+}
 
 
 @media (prefers-color-scheme: dark) {
