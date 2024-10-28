@@ -52,7 +52,7 @@ html {
 
 body {
     font-family: 'Roboto', sans-serif;
-    color: #333;
+    color: #000;
     background-color: var(--color-background);
     padding: 0;
     margin: 0;
@@ -60,6 +60,26 @@ body {
     height: auto;
 
 }
+
+@media (prefers-color-scheme: dark) {
+    body {
+        color: #FFF;
+        background-color: var(--color-darkmode-grey);
+    }
+
+}
+
+
+
+@media (prefers-contrast: more) {
+    body {
+        color: #000;
+        background-color: #FFF;
+    }
+
+}
+
+
 
 
 /* =====================================================
@@ -100,6 +120,43 @@ nav ul li a {
 }
 
 
+@media (prefers-color-scheme: dark) {
+
+    nav ul {
+        background-color: var(--color-darkmode-dark-grey);
+    }
+
+    nav ul li {
+        border-bottom: 1px solid var(--color-darkmode-header);
+
+    }
+
+    nav ul li a {
+        color: var(--color-colombia-blue);
+    }
+
+}
+
+
+
+@media (prefers-contrast: more) {
+    nav ul {
+        background-color: #000;
+    }
+
+    nav ul li {
+        border-bottom: 1px solid #FFF;
+
+    }
+
+    nav ul li a {
+        color: #FFF;
+    }
+
+}
+
+
+
 /* =====================================================
 Header
 ===================================================== */
@@ -126,6 +183,35 @@ header h2 {
 }
 
 
+@media (prefers-color-scheme: dark) {
+
+    header a {
+        color: var(--color-background-deep);
+    }
+
+    header h2 {
+        color: var(--color-blue);
+    }
+
+}
+
+
+@media (prefers-contrast: more) {
+    header a {
+        color: #000;
+    }
+
+    header h2 {
+        color: #000;
+    }
+
+}
+
+
+
+
+
+
 /* =====================================================
 Main content
 ===================================================== */
@@ -139,6 +225,7 @@ h2 {
     margin-top: 2em;
     font-weight: 600;
     text-align: center;
+    margin-bottom: 2em;
 }
 
 a[href="#main"] {
@@ -156,14 +243,48 @@ a[href="#main"] {
 }
 
 .athlete {
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .summary time {
-    font-weight: 600;
+    font-weight: 700;
     color: var(--color-blue);
 
 }
+
+
+@media (prefers-color-scheme: dark) {
+
+    .summary p {
+        background-color: var(--color-darkmode-dark-grey);
+    }
+
+    h2{
+        color: var(--color-colombia-blue);
+
+    }
+
+
+
+}
+
+
+@media (prefers-contrast: more) {
+
+
+    .summary p {
+        background-color: #FFF;
+        color: #000;
+    }
+
+    h2{
+        color: #000;
+    }
+
+}
+
+
+
 
 
 
@@ -201,6 +322,7 @@ td {
 th {
     background-color: var(--color-dark);
     color: #FFF;
+    font-weight: 700;
 }
 
 #athlete-sr-table,
@@ -215,6 +337,66 @@ table td a {
 }
 
 
+
+@media (prefers-color-scheme: dark) {
+
+    table {
+        background-color: var(--color-darkmode-dark-grey);
+    }
+
+    table tr:nth-child(even) {
+        background-color: var(--color-darkmode-grey);
+    }
+
+    th {
+        background-color: var(--color-darkmode-light-grey);
+    }
+
+    table td:nth-child(2) {
+        color: var(--color-colombia-blue);
+        font-weight: 500;
+    }
+
+    th,
+    td {
+        border: 1px solid var(--color-darkmode-light-grey);
+    }
+
+}
+
+
+@media (prefers-contrast: more) {
+
+
+    table {
+        background-color: #FFF;
+    }
+
+    table tr:nth-child(even) {
+        background-color: #FFF;
+    }
+
+    th {
+        background-color: #000;
+        color: #FFF;
+    }
+
+    table td:nth-child(2) {
+        color: #000;
+        font-weight: 500;
+    }
+
+    th,
+    td {
+        border: 1px solid #000;
+    }
+
+}
+
+
+
+
+
 /* =====================================================
 Individual results
 ===================================================== */
@@ -225,7 +407,6 @@ Individual results
     align-items: center;
     margin: 1em 0;
     text-align: center;
-    border: 1px solid #ddd;
     padding: 0.8em;
     border-radius: 1em;
     background-color: #FFF;
@@ -266,14 +447,49 @@ Individual results
 
 .athlete dt {
     font-weight: 500;
-    color: #555;
 }
 
 .athlete dd {
     margin: 0;
     text-align: right;
-    color: #333;
 }
+
+
+@media (prefers-color-scheme: dark) {
+
+    #individual-results .athlete {
+        background-color: var(--color-darkmode-dark-grey);
+    }
+
+    .athlete dl {
+        color: #FFF;
+        background-color: var(--color-darkmode-header);
+    }
+
+
+
+
+
+}
+
+
+@media (prefers-contrast: more) {
+
+
+    #individual-results .athlete {
+        background-color: #FFF;
+    }
+
+    .athlete dl {
+        color: #000;
+        background-color: #FFF;
+    }
+
+
+}
+
+
+
 
 
 /* =====================================================
@@ -281,16 +497,11 @@ gallery
 ===================================================== */
 #gallery {
     padding: 10px;
-    background-color: #f9f9f9;
+    background-color: var(--color-background-deep);
+    border-radius: 1em;
+
 }
 
-/* Center and Style the Header */
-#gallery h2 {
-    font-size: 1.5em;
-    text-align: center;
-    margin-bottom: 15px;
-    color: #333;
-}
 
 #gallery {
     display: block;
@@ -316,6 +527,30 @@ gallery
     align-items: center;
 
 }
+
+
+@media (prefers-color-scheme: dark) {
+
+    #gallery {
+        background-color: var(--color-darkmode-dark-grey);
+    }
+    
+
+}
+
+
+@media (prefers-contrast: more) {
+
+    #gallery {
+        background-color: #FFF;
+    }
+    
+
+}
+
+
+
+
 
 /* =====================================================
 Footer 
