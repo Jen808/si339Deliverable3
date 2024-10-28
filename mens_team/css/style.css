@@ -609,12 +609,12 @@ tbody tr,
         color: var(--color-colombia-blue);
     }
 
-    @media (max-width: 768px) {
-        tbody td {
-            border: 0;
-            border-bottom: 1px solid var(--color-darkmode-header);
-        }
+
+    tbody td {
+        border: 0;
+        border-bottom: 1px solid var(--color-darkmode-header);
     }
+
 
 
 }
@@ -663,7 +663,7 @@ tbody tr,
         border: 0;
         border-bottom: 1px solid #000;
     }
-    
+
 
 }
 
