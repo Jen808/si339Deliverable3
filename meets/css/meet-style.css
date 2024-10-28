@@ -151,6 +151,8 @@ a[href="#main"] {
     line-height: 1.4em;
     background-color: #FFF;
     padding: 1.6em;
+    animation: bounceInDown 1s ease-in-out;
+
 }
 
 .athlete {
