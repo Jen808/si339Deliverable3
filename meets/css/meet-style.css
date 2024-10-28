@@ -183,7 +183,7 @@ header a {
 header h2 {
     font-size: 1.2em;
     font-weight: 600;
-    color: var(--color-blue);
+    color: var(--color-dark);
     animation: tada 1s ease-in-out;
 
 }
@@ -236,9 +236,19 @@ h2 {
 
 }
 
-a[href="#main"] {
+/* a[href="#main"] {
     display: none;
+} */
+
+
+a[href="#main"] {
+    color: var(--color-dark);
+    text-align: center;
+    font-weight: 600;
+    padding-left: 44vw;
+
 }
+
 
 .summary p {
     font-size: 1em;
@@ -257,7 +267,7 @@ a[href="#main"] {
 
 .summary time {
     font-weight: 700;
-    color: var(--color-blue);
+    color: var(--color-dark);
 
 }
 
@@ -271,6 +281,16 @@ a[href="#main"] {
     h2{
         color: var(--color-colombia-blue);
 
+    }
+
+    a[href="#main"] {
+        color: #FFF;
+    
+    }
+
+    .summary time {
+        color: var(--color-colombia-blue);
+    
     }
 
 
@@ -294,6 +314,12 @@ a[href="#main"] {
         color: #000;
     
     }
+
+    a[href="#main"] {
+        color: #000;
+    
+    }
+
 
 
 }
