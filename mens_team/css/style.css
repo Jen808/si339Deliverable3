@@ -393,13 +393,14 @@ main h2 {
     font-size: 1.2rem;
     font-weight: 600;
     margin: 1.4em 0em;
+    animation: tada 1s ease-in-out;
+
 
 }
 
 section {
     margin-bottom: 30px;
 }
-
 
 
 
@@ -413,6 +414,9 @@ table {
     border-collapse: collapse;
     margin-bottom: 20px;
     table-layout: fixed;
+    animation: bounceIn 1s ease-in-out;
+
+    
 }
 
 thead tr {
@@ -446,6 +450,8 @@ thead th {
     border: 1px solid #ddd;
     text-wrap: wrap !important;
     font-weight: 500;
+    
+    
 }
 
 
@@ -749,6 +755,12 @@ footer a:hover {
 
 }
 
+
+
+h2{
+    animation: tada 1s ease-in-out;
+
+}
 
 
 
