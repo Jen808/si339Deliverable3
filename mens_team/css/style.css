@@ -416,7 +416,7 @@ table {
     table-layout: fixed;
     animation: bounceIn 1s ease-in-out;
 
-    
+
 }
 
 thead tr {
@@ -450,8 +450,8 @@ thead th {
     border: 1px solid #ddd;
     text-wrap: wrap !important;
     font-weight: 500;
-    
-    
+
+
 }
 
 
@@ -824,4 +824,20 @@ body::after {
     }
 
 
+}
+
+
+/* =====================================================
+Reduce Motion
+===================================================== */
+
+
+
+@media (prefers-reduced-motion) {
+
+    header,
+    main h2,
+    table {
+        animation: none;
+    }
 }

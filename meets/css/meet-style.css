@@ -257,7 +257,7 @@ a[href="#main"] {
     background-color: #FFF;
     padding: 1.6em;
     animation: bounceInDown 1s ease-in-out;
-    
+
 
 }
 
@@ -278,19 +278,19 @@ a[href="#main"] {
         background-color: var(--color-darkmode-dark-grey);
     }
 
-    h2{
+    h2 {
         color: var(--color-colombia-blue);
 
     }
 
     a[href="#main"] {
         color: #FFF;
-    
+
     }
 
     .summary time {
         color: var(--color-colombia-blue);
-    
+
     }
 
 
@@ -306,18 +306,18 @@ a[href="#main"] {
         color: #000;
     }
 
-    h2{
+    h2 {
         color: #000;
     }
 
     .summary time {
         color: #000;
-    
+
     }
 
     a[href="#main"] {
         color: #000;
-    
+
     }
 
 
@@ -575,7 +575,7 @@ gallery
     #gallery {
         background-color: var(--color-darkmode-dark-grey);
     }
-    
+
 
 }
 
@@ -585,7 +585,7 @@ gallery
     #gallery {
         background-color: #FFF;
     }
-    
+
 
 }
 
@@ -740,4 +740,21 @@ body::after {
     }
 
 
+}
+
+/* =====================================================
+Reduce Motion
+===================================================== */
+
+
+
+@media (prefers-reduced-motion) {
+
+    header h1,
+    header a,
+    header h2,
+    h2,
+    .summary p {
+        animation: none;
+    }
 }
